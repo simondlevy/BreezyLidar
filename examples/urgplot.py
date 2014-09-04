@@ -69,7 +69,7 @@ class URGPlotter(tk.Frame):
         # Create the frame        
         tk.Frame.__init__(self, borderwidth = 4, relief = 'sunken')
         self.master.geometry(str(DISPLAY_CANVAS_SIZE_PIXELS)+ "x" + str(DISPLAY_CANVAS_SIZE_PIXELS))
-        self.master.title('Hokuyo URG04LX  [Hit ESC to quit]')
+        self.master.title('Hokuyo URG04LX  [ESC to quit]')
         self.grid()
         self.master.rowconfigure(0, weight = 1)
         self.master.columnconfigure(0, weight = 1)
@@ -146,19 +146,26 @@ class URGPlotter(tk.Frame):
         '''
         Called automagically when user clicks X to close window.
         '''  
+
+        self._quit()
+
+    def _quit(self):
+
         self.running = False
         elapsed_sec = time() - self.start_sec
         print('%d scans    in %f sec = %f scans/sec' % (self.count, elapsed_sec, self.count/elapsed_sec))
         print('%d displays in %f sec = %f displays/sec' % (self.showcount, elapsed_sec, self.showcount/elapsed_sec))
         
         del self.lidar
+
+        exit(0)
         
     def _key(self, event):
 
         # Make sure the frame is receiving input!
         self.focus_force()
         if event.keysym == 'Escape':
-            exit(0)
+            self._quit()
 
     def _task(self):
         
