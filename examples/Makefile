@@ -22,12 +22,6 @@ TARGET = urgtest
 
 all : urgtest
 
-plot:
-	./urgplot.py
-
-test: 
-	./urgtest.py
-
 cpptest: urgtest
 	./urgtest
 
