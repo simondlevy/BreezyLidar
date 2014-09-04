@@ -33,12 +33,16 @@ URG_SCAN_SIZE               = 682
 
 from breezylidar import URG04LX
 
-import Tkinter
-
 from math import sin, cos, radians
 from time import time, sleep, ctime
-from sys import exit
-import thread
+from sys import exit, version
+
+if version[0] == '3':
+    import tkinter as tk
+    import _thread as thread
+else:
+    import Tkinter as tk
+    import thread
 
 # Runs on its own thread
 def grab_scan( obj):
@@ -52,9 +56,9 @@ def grab_scan( obj):
                 break
                 
                 
-class URGPlotter(Tkinter.Frame):
+class URGPlotter(tk.Frame):
     '''
-    UGRPlotter extends Tkinter.Frame to plot Lidar scans.
+    UGRPlotter extends tk.Frame to plot Lidar scans.
     '''
     
     def __init__(self):
@@ -63,23 +67,29 @@ class URGPlotter(Tkinter.Frame):
         '''
         
         # Create the frame        
-        Tkinter.Frame.__init__(self, borderwidth = 4, relief = 'sunken')
+        tk.Frame.__init__(self, borderwidth = 4, relief = 'sunken')
         self.master.geometry(str(DISPLAY_CANVAS_SIZE_PIXELS)+ "x" + str(DISPLAY_CANVAS_SIZE_PIXELS))
-        self.master.title('Hokuyo URG04LX')
+        self.master.title('Hokuyo URG04LX  [Hit ESC to quit]')
         self.grid()
         self.master.rowconfigure(0, weight = 1)
         self.master.columnconfigure(0, weight = 1)
-        self.grid(sticky = Tkinter.W+Tkinter.E+Tkinter.N+Tkinter.S)
+        self.grid(sticky = tk.W+tk.E+tk.N+tk.S)
         self.background = DISPLAY_CANVAS_COLOR
         
         # Add a canvas for drawing
-        self.canvas =  Tkinter.Canvas(self, \
+        self.canvas =  tk.Canvas(self, \
             width = DISPLAY_CANVAS_SIZE_PIXELS, \
             height = DISPLAY_CANVAS_SIZE_PIXELS,\
             background = DISPLAY_CANVAS_COLOR)
         self.canvas.grid(row = 0, column = 0,\
                     rowspan = 1, columnspan = 1,\
-                    sticky = Tkinter.W+Tkinter.E+Tkinter.N+Tkinter.S)
+                    sticky = tk.W+tk.E+tk.N+tk.S)
+
+        # Set up a key event for exit on ESC
+        self.bind('<Key>', self._key)
+
+        # This call gives the frame focus so that it receives input
+        self.focus_set()
 
         # No scanlines initially                             
         self.lines = []
@@ -143,6 +153,13 @@ class URGPlotter(Tkinter.Frame):
         
         del self.lidar
         
+    def _key(self, event):
+
+        # Make sure the frame is receiving input!
+        self.focus_force()
+        if event.keysym == 'Escape':
+            exit(0)
+
     def _task(self):
         
         # Modify the displayed lines according to the current scan
