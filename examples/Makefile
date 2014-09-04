@@ -28,8 +28,8 @@ cpptest: urgtest
 urgtest : urgtest.o
 	g++ -o urgtest -O2 urgtest.o -L$(LIBDIR) -lbreezylidar
 
-urgtest.o : urgtest.cpp ../c++/URG04LX.hpp
-	g++ -Wall -c -I../c++ urgtest.cpp
+urgtest.o : urgtest.cpp ../cpp/URG04LX.hpp
+	g++ -Wall -c -I../cpp urgtest.cpp
 
 clean :
 	rm -rf $(TARGET) *.o *~
