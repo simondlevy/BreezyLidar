@@ -25,7 +25,7 @@ along with this code.  If not, see <http://www.gnu.org/licenses/>.
 #include "../c/hokuyo.h"
 
 
-// URG04LX class  ------------------------------------s--------------------------
+// URG04LX class  ---------------------------------------------------------------
 
 typedef struct 
 {
