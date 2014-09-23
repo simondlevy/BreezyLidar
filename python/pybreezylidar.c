@@ -16,10 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License 
 along with this code.  If not, see <http://www.gnu.org/licenses/>.
 
-Change log:
-
-XX-XXX-2014 : Simon D. Levy  - Initial release
-
 */
 
 #include <Python.h>
@@ -27,7 +23,6 @@ XX-XXX-2014 : Simon D. Levy  - Initial release
 
 #include "pyextension_utils.h"
 #include "../c/hokuyo.h"
-
 
 
 // URG04LX class  ------------------------------------s--------------------------
@@ -76,7 +71,10 @@ static int URG04LX_init(URG04LX *self, PyObject *args, PyObject *kw)
     
     self->hokuyo = hokuyo_create("breezylidar.URG04LX", debug);
     
-    hokuyo_connect(self->hokuyo, "breezylidar.URG04LX", devname, baudrate);
+    if (hokuyo_connect(self->hokuyo, "breezylidar.URG04LX", devname, baudrate))
+    {
+        return error_on_raise_argument_exception("URG04LX");
+    }
 
     self->range = (unsigned int *)malloc(MAX_NUM_POINTS_URG_04LX*sizeof(unsigned int));
    
