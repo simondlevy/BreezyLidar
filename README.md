@@ -20,15 +20,15 @@ unit is connected, and method for accessing the scans (range values):
 
 <p>
 <tt>
-&nbsp &nbsp from breezylidar import URG04LX
+  from breezylidar import URG04LX
 <p>
-&nbsp &nbsp laser = <b>URG04LX</b>('dev/tty/ACM0')
+  laser = <b>URG04LX</b>('dev/tty/ACM0')
 <p>
-&nbsp &nbsp while True:
+  while True:
 <p>
-&nbsp &nbsp &nbsp &nbsp scan = laser.<b>getScan</b>()
+    scan = laser.<b>getScan</b>()
 <p>
-&nbsp &nbsp &nbsp &nbsp # <i>do something with scan, like 
+    # <i>do something with scan, like 
 <a href="http://home.wlu.edu/~levys/software/breezyslam/">SLAM</a></i>
 <p>
 </tt>
@@ -42,11 +42,11 @@ The BreezyLidar installation uses the popular
 approach to installing Python packages, so all you should have to do is
 download the repositry, cd to the directory where you put it, and do 
 
-&nbsp &nbsp <h3><b><tt>sudo python setup.py install</tt></b></h3>
+  <h3><b><tt>sudo python setup.py install</tt></b></h3>
 
 For a quick demo, you can then cd to <tt><b>examples</b></tt> and do
 
-&nbsp &nbsp <h3><b><tt>make test</tt></b></h3>
+  <h3><b><tt>make test</tt></b></h3>
 
 This will attempt to connect to the Lidar, print out some information about it,
 and read 20 scans.  I've found that it can take up to half a minute for the 
@@ -54,7 +54,7 @@ URG-04LX to be ready after plugging in its USB cable, so it's best to wait
 a little between plugging it in and running the program.  Depending on how your
 system is configured, you may need to run the program as root:
 
-&nbsp &nbsp <h3><b><tt>sudo make test</tt></b></h3>
+  <h3><b><tt>sudo make test</tt></b></h3>
 
 or you may need to change the <tt><b>DEVICE</b></tt> specified at the top of urgtest.py to
 <tt><b>/dev/ttyACM1</b></tt> or whatever file your URG-04LX maps to.
@@ -66,7 +66,7 @@ If you have the
 <a href="http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter">Python Tkinter</a>
 package installed, you can do
 
-&nbsp &nbsp <h3><b><tt>python urgplot.py</tt></b></h3>
+  <h3><b><tt>python urgplot.py</tt></b></h3>
 
 to see a real-time plot of the scans.
 
@@ -74,7 +74,7 @@ to see a real-time plot of the scans.
 
 To see what other features are available, do 
 
-&nbsp &nbsp <h3><b><tt>pydoc breezylidar</tt></b></h3>
+  <h3><b><tt>pydoc breezylidar</tt></b></h3>
 
 or check out the online <a href="breezylidar.html">documentation</a>. 
 
@@ -82,7 +82,7 @@ or check out the online <a href="breezylidar.html">documentation</a>.
 
 Just cd to the <b>cpp</b> directory, and do
 
-&nbsp &nbsp <h3><b><tt>sudo make install</tt></b></h3>
+  <h3><b><tt>sudo make install</tt></b></h3>
 
 This will put the <tt><b>libbreezylidar</b></tt> shareable library in your <tt><b>/usr/local/lib</b></tt>
 directory.  If you keep your shared libraries elsewhere, just change the <tt><b>LIBDIR</b></tt>
@@ -92,7 +92,7 @@ variable at the top of the Makefile.
 
 For a quick demo, you can then cd to <tt><b>breezylidar/examples</b></tt> and do
 
-&nbsp &nbsp <h3><b><tt>make cpptest</tt></b></h3>
+  <h3><b><tt>make cpptest</tt></b></h3>
 
 <p>
 
@@ -111,7 +111,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 To see what other features are available, go back to the <b>cpp</b> directory and do
 
-&nbsp &nbsp <h3><b><tt>make doc</tt></b></h3>
+  <h3><b><tt>make doc</tt></b></h3>
 
 and then open  <tt><b>Documentation/html/index.html</b></tt> in a web browser.
 
