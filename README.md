@@ -1,17 +1,12 @@
 BreezyLidar
 ===========
 
-BreezyLidar - Simple, efficient, Lidar access in Python and C++
+BreezyLidar - Simple, efficient, Lidar access for Linux computers in Python and C++
 
-
-
-
-This repository contains everything you need to
-start working with the popular 
+This repository contains everything you need to start working with the popular 
 <a href="http://www.robotshop.com/en/hokuyo-urg-04lx-ug01-scanning-laser-rangefinder.html">
-Hokuyo URG-04LX</a/> Lidar unit on your Linux computer.
-BreezyLidar works with Python 2 and 3 and C++.  I am working on getting it to run on OS X and Windows,
-and in Matlab and Java.
+Hokuyo URG-04LX</a> Lidar unit on your Linux computer.  It is mean to be used
+for robotics applications on a single-board Linux computer like RaspberryPi or ODROID.
 
 <p>
 BreezyLidar was inspired by the <a href="http://home.wlu.edu/~lambertk/#Software">Breezy</a>
