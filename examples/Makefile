@@ -22,6 +22,9 @@ TARGET = urgtest
 
 all : urgtest
 
+test:
+	./urgtest.py
+
 cpptest: urgtest
 	./urgtest
 

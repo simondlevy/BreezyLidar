@@ -5,8 +5,8 @@ BreezyLidar - Simple, efficient, Lidar access for Linux computers in Python and 
 
 This repository contains everything you need to start working with the popular 
 <a href="http://www.robotshop.com/en/hokuyo-urg-04lx-ug01-scanning-laser-rangefinder.html">
-Hokuyo URG-04LX</a> Lidar unit on your Linux computer.  It is mean to be used
-for robotics applications on a single-board Linux computer like RaspberryPi or ODROID.
+Hokuyo URG-04LX</a> Lidar unit on your Linux computer.  It is designed for
+robotics applications on a single-board Linux computer like RaspberryPi or ODROID.
 
 <p>
 BreezyLidar was inspired by the <a href="http://home.wlu.edu/~lambertk/#Software">Breezy</a>
@@ -44,7 +44,7 @@ download the repositry, cd to the directory where you put it, and do
 
 &nbsp &nbsp <h3><b><tt>sudo python setup.py install</tt></b></h3>
 
-For a quick demo, you can then cd to <tt><b>breezylidar/examples</b></tt> and do
+For a quick demo, you can then cd to <tt><b>examples</b></tt> and do
 
 &nbsp &nbsp <h3><b><tt>make test</tt></b></h3>
 
