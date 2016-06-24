@@ -76,8 +76,6 @@ To see what other features are available, do
 
   <h3><b><tt>pydoc breezylidar</tt></b></h3>
 
-or check out the online <a href="breezylidar.html">documentation</a>. 
-
 <h3>Installing for C++</h3>
 
 Just cd to the <b>cpp</b> directory, and do
