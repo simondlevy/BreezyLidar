@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''
 urgplot.py : A little Python class to display Lidar scans from the Hokuyo URG-04LX

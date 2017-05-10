@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''
 urtest.py : Python test program for BreezyLidar on Hokuyo URG-04LX

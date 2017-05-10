@@ -42,7 +42,7 @@ The BreezyLidar installation uses the popular
 approach to installing Python packages, so all you should have to do is
 download the repositry, cd to the directory where you put it, and do 
 
-  <h3><b><tt>sudo python setup.py install</tt></b></h3>
+  <h3><b><tt>sudo python3 setup.py install</tt></b></h3>
 
 For a quick demo, you can then cd to <tt><b>examples</b></tt> and do
 
@@ -66,7 +66,7 @@ If you have the
 <a href="http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter">Python Tkinter</a>
 package installed, you can do
 
-  <h3><b><tt>python urgplot.py</tt></b></h3>
+  <h3><b><tt>python3 urgplot.py</tt></b></h3>
 
 to see a real-time plot of the scans.
 
