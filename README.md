@@ -18,21 +18,13 @@ As shown in the following code fragment, the API is extremely
 simple: a constructor that accepts the port (device) name on which the
 unit is connected, and method for accessing the scans (range values):
 
-<p>
-<tt>
+```python
   from breezylidar import URG04LX
-<p>
   laser = <b>URG04LX</b>('dev/tty/ACM0')
-<p>
   while True:
-<p>
     scan = laser.<b>getScan</b>()
-<p>
-    # <i>do something with scan, like 
-<a href="http://home.wlu.edu/~levys/software/breezyslam/">SLAM</a></i>
-<p>
-</tt>
-<p>
+    # do something with scan, like
+```
 
 <h3>Installing for Python</h3>
 
@@ -42,7 +34,15 @@ The BreezyLidar installation uses the popular
 approach to installing Python packages, so all you should have to do is
 download the repositry, cd to the directory where you put it, and do 
 
-  <h3><b><tt>sudo python3 setup.py install</tt></b></h3>
+  ```bash
+  sudo python3 setup.py install
+  ```
+
+  OR
+
+  ```bash
+  pip install "git+https://github.com/simondlevy/BreezyLidar.git#egg=BreezyLidar&subdirectory=python"
+  ```
 
 For a quick demo, you can then cd to <tt><b>examples</b></tt> and do
 
